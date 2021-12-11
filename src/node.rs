@@ -28,12 +28,12 @@ impl<T:Copy> Node<T> {
 }
 
 impl<T:Copy> Node<T> {
-    pub fn iter_nodes(self: Arc<Node<T>>) -> NodeIterator<T> {
+    pub fn node_iter(self: Arc<Node<T>>) -> NodeIterator<T> {
         let top: Arc<Vec<Arc<Node<T>>>> = Arc::new(vec![self.clone()]);
         NodeIterator::new(top)
     }
 
-    pub fn iter_contents(self: Arc<Node<T>>) -> ContentIterator<T> {
+    pub fn content_iter(self: Arc<Node<T>>) -> ContentIterator<T> {
         let top: Arc<Vec<Arc<Node<T>>>> = Arc::new(vec![self.clone()]);
         ContentIterator::new(top)
     }
